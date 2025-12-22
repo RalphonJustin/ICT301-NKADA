@@ -1,0 +1,23 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+package SRP.after;
+
+import java.io.PrintStream;
+
+public class BookSaver {
+   public BookSaver() {
+   }
+
+   public void saveToDatabase(BookSRP book) {
+      System.out.println("\nSauvegarde de '" + book.getTitle() + "' en base de données...");
+   }
+
+   public void saveToFile(BookSRP book, String filename) {
+      PrintStream var10000 = System.out;
+      String var10001 = book.getTitle();
+      var10000.println("\nSauvegarde de '" + var10001 + "' dans " + filename);
+   }
+
+   public void saveToCloud(BookSRP book) {
+      System.out.println("\nSauvegarde de '" + book.getTitle() + "' dans le cloud...");
+   }
+}

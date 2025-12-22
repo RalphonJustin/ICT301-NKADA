@@ -1,0 +1,24 @@
+// Source code is decompiled from a .class file using FernFlower decompiler (from Intellij IDEA).
+package SRP.after;
+
+public class MainSRP {
+   public MainSRP() {
+   }
+
+   public static void main(String[] args) {
+      System.out.println("--------- APRÈS REFACTORING SRP --------\n");
+      BookSRP book = new BookSRP("Les principes SOLID", "Etudiants de M1-GL", "Révision des principes SOLID pour une architecture logicielle robuste");
+      BookPrinter printer = new BookPrinter();
+      printer.printToScreen(book);
+      printer.printToHTML(book);
+      printer.printToPDF(book);
+      BookSaver saver = new BookSaver();
+      saver.saveToDatabase(book);
+      saver.saveToFile(book, "solid_book.txt");
+      saver.saveToCloud(book);
+      BookBusinessLogic businessLogic = new BookBusinessLogic();
+      businessLogic.emprunter(book, "Marcial");
+      businessLogic.reserver(book, "Alice");
+      businessLogic.retourner(book, "Marcial");
+   }
+}
